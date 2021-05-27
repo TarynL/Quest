@@ -36,6 +36,19 @@ namespace Quest
                     4, 20
                 );
 
+                Challenge theDog = new Challenge(@"Who is the cutest dog in the world?
+                1) Clifford
+                2) Gus
+                3) Beethtoven", 2, 75);
+
+                Challenge theBank = new Challenge("How many dollars are in your bank account?", 2, 10);
+
+                Challenge iceCream = new Challenge(@"What is better ice cream?
+                1) Mint Chocolate Chip
+                2) Cookie Dough
+                3) Pistachio
+                4) Strawberry", 3, 25);
+
 
                 // "Awesomeness" is like our Adventurer's current "score"
                 // A higher Awesomeness is better
@@ -72,12 +85,36 @@ namespace Quest
                 theAnswer,
                 whatSecond,
                 guessRandom,
-                favoriteBeatle
+                favoriteBeatle,
+                theDog,
+                theBank,
+                iceCream
+
             };
+                Random r = new Random();
+                List<int> indexes = new List<int>();
+
+
+                while (indexes.Count < 5)
+                {
+                    int question = r.Next(challenges.Count - 1);
+                    if (!indexes.Contains(question))
+                    {
+                        indexes.Add(question);
+                    }
+                }
+                for (int i = 0; i < indexes.Count; i++)
+                {
+                    int index = indexes[i];
+                    Console.WriteLine(challenges[index]);
+                }
+
+
 
                 // Loop through all the challenges and subject the Adventurer to them
                 foreach (Challenge challenge in challenges)
                 {
+
                     challenge.RunChallenge(theAdventurer);
                 }
 
