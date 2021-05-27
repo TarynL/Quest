@@ -59,7 +59,7 @@ namespace Quest
                 // Make a new "Adventurer" object using the "Adventurer" class
                 Console.Write($"Welcome. What is the adventurers name?");
                 string adventurerName = Console.ReadLine();
-
+                Prize winnerPrize = new Prize("75 Million Dollars");
                 Adventurer theAdventurer = new Adventurer(adventurerName, AdventurerRobe, AdventurerHat);
                 Console.WriteLine(theAdventurer.GetDescription());
 
@@ -96,6 +96,7 @@ namespace Quest
                     Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
 
                 }
+                winnerPrize.ShowPrize(theAdventurer);
 
                 Console.WriteLine("Would you like to play again?");
                 Console.WriteLine("Y or N");
