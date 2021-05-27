@@ -7,7 +7,7 @@ namespace Quest
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
             // Create a few challenges for our Adventurer's quest
             // The "Challenge" Constructor takes three arguments
@@ -46,11 +46,17 @@ namespace Quest
                 int minAwesomeness = 0;
                 int maxAwesomeness = 100;
 
+                Robe AdventurerRobe = new Robe();
+                {
+                    AdventurerRobe.Length = 45;
+                    AdventurerRobe.Colors = new List<string> { "red", "black", "gold" };
+                }
                 // Make a new "Adventurer" object using the "Adventurer" class
                 Console.Write($"Welcome. What is the adventurers name?");
                 string adventurerName = Console.ReadLine();
-                Adventurer theAdventurer = new Adventurer(adventurerName);
 
+                Adventurer theAdventurer = new Adventurer(adventurerName, AdventurerRobe);
+                Console.WriteLine(theAdventurer.GetDescription());
                 // A list of challenges for the Adventurer to complete
                 // Note we can use the List class here because have the line "using System.Collections.Generic;" at the top of the file.
                 List<Challenge> challenges = new List<Challenge>()
