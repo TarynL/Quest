@@ -106,17 +106,18 @@ namespace Quest
                 for (int i = 0; i < indexes.Count; i++)
                 {
                     int index = indexes[i];
-                    Console.WriteLine(challenges[index]);
+                    challenges[index].RunChallenge(theAdventurer);
+                    // Console.WriteLine(challenges[index]);
                 }
 
 
 
                 // Loop through all the challenges and subject the Adventurer to them
-                foreach (Challenge challenge in challenges)
-                {
+                // foreach (Challenge challenge in challenges)
+                // {
 
-                    challenge.RunChallenge(theAdventurer);
-                }
+                //     challenge.RunChallenge(theAdventurer);
+                // }
 
                 // This code examines how Awesome the Adventurer is after completing the challenges
                 // And praises or humiliates them accordingly
