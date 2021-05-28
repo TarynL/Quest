@@ -16,8 +16,8 @@ namespace Quest
         {
             if (Adventurer.Awesomeness > 0)
             {
-                for (int i = 0; i < Adventurer.Awesomeness; i++)
-                    Console.WriteLine(_text);
+                // for (int i = 0; i < Adventurer.Awesomeness; i++)
+                Console.WriteLine(_text);
             }
             else
             {

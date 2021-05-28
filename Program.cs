@@ -69,11 +69,13 @@ namespace Quest
                 {
                     AdventurerHat.ShininessLevel = 4;
                 }
+
+                int SucessfulChallenge = new int();
                 // Make a new "Adventurer" object using the "Adventurer" class
                 Console.Write($"Welcome. What is the adventurers name?");
                 string adventurerName = Console.ReadLine();
                 Prize winnerPrize = new Prize("75 Million Dollars");
-                Adventurer theAdventurer = new Adventurer(adventurerName, AdventurerRobe, AdventurerHat);
+                Adventurer theAdventurer = new Adventurer(adventurerName, AdventurerRobe, AdventurerHat, SucessfulChallenge);
                 Console.WriteLine(theAdventurer.GetDescription());
 
 
@@ -121,6 +123,8 @@ namespace Quest
 
                 // This code examines how Awesome the Adventurer is after completing the challenges
                 // And praises or humiliates them accordingly
+
+
                 if (theAdventurer.Awesomeness >= maxAwesomeness)
                 {
                     Console.WriteLine("YOU DID IT! You are truly awesome!");
@@ -141,6 +145,8 @@ namespace Quest
                 string answer = Console.ReadLine().ToLower();
                 if (answer == "y")
                 {
+                    int Score = theAdventurer.Awesomeness + (theAdventurer.SuccessfulChallenges * 10);
+                    Console.WriteLine($"You have a total of {Score} points.");
                     playGame();
                 }
                 else if (answer != "y")
