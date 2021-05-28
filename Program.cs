@@ -145,10 +145,19 @@ namespace Quest
                 string answer = Console.ReadLine().ToLower();
                 if (answer == "y")
                 {
-                    int Score = theAdventurer.Awesomeness + (theAdventurer.SuccessfulChallenges * 10);
-                    Console.WriteLine($"You have a total of {Score} points.");
-                    playGame();
+                    if (theAdventurer.Awesomeness > 0)
+                    {
+                        int Score = theAdventurer.Awesomeness + (theAdventurer.SuccessfulChallenges * 10);
+                        Console.WriteLine($"You have a total of {Score} points.");
+                        playGame();
+                    }
+                    else
+                    {
+                        Console.WriteLine("You scored zero points.");
+                        playGame();
+                    }
                 }
+
                 else if (answer != "y")
                 {
                     return;
